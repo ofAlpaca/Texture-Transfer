@@ -9,8 +9,6 @@
 #include "opencv2/imgproc/imgproc.hpp" // In order to use cvtColor()
 #include "texture_synthesis.h" // In order to synthesis patches
 
-#define DEBUG(x) do{  cerr << x << endl;  } while(0)
-
 int get_texture_image_diff(Point texture, Point image, Size patch_size);
 Mat find_similiar_from_texture(Mat texture, Point part_img, Size patch_size);
 Mat texture_transfer(Mat texture, Mat image, Size patch_size, int overlap);
@@ -151,7 +149,7 @@ Mat find_similiar_from_texture(Mat texture, Point part_img, Size patch_size) {
 			if (min_diff == -1 || min_diff > diff) { // If there is a smaller one.
 				min_diff = diff;
 				min_dff_cor = Point(x, y);
-				
+
 			}
 		}
 
